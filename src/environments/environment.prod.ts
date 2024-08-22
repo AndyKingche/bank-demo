@@ -1,3 +1,5 @@
+const apiURL = 'http://localhost:3002'
 export const environment = {
-  production: true
+  production: true,
+  products: `${apiURL}/bp/products`
 };
