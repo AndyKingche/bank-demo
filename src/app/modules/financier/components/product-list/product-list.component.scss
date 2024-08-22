@@ -19,11 +19,12 @@
     margin: 20px auto;
   }
 
-.table-container {
-    width: 90%;
-    margin: 20px auto;
-    background-color: #FFFFFF;
-    padding: 20px;
+  
+  .table-container {
+      width: 90%;
+      margin: 20px auto;
+      background-color: #FFFFFF;
+      padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
@@ -47,47 +48,53 @@
   }
   
   .add-button:hover {
-    background-color: #F5DF66;
+      background-color: #F5DF66;
   }
   
   .data-table {
-    width: 100%;
+      width: 100%;
     border-collapse: collapse;
   }
-
-
+  
+  
   .data-table td{
-    background-color: #FFFFFF;
-  }
-  
-  .data-table th, .data-table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  
-  .data-table th {
-    background-color: #fafafa;
-    font-weight: bold;
-  }
-  
-  .data-table tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .logo {
-    width: 40px;
-    height: 40px;
-    background-color: #ddd;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #555;
-  }
-  
+      background-color: #FFFFFF;
+    }
+    
+    .data-table th, .data-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    
+    .data-table th {
+        background-color: #fafafa;
+        font-weight: bold;
+    }
+    
+    .data-table tr:hover {
+        background-color: #f1f1f1;
+    }
+    
+    .logo {
+        width: 40px;
+        height: 40px;
+        background-color: #ddd;
+        border-radius: 50%;
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: #555;
+    }
+    
+    .logo-img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   .more-options {
     background: none;
     border: none;

@@ -2,7 +2,7 @@
 <div class="content-main">
      <div class="content">
         <div class="header">
-            <input type="text" placeholder="Search..." class="search-input">
+            <input type="text" [formControl]="searchControl" placeholder="Search..." class="search-input">
             <button class="add-button">Agregar</button>
           </div>
           <div class="table-container">
@@ -19,8 +19,8 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let product of listProduct">
-                    <td><div class="logo">JC</div></td>
+                  <tr *ngFor="let product of filterProduct">
+                    [<td><div class="logo"><img class="logo-img" src="{{product.logo}}" alt="{{product.name}}"></div></td>
                     <td>{{product.name}}</td>
                     <td>{{product.description}}</td>
                     <td>{{product.date_release}}</td>
