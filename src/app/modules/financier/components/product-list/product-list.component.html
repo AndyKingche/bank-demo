@@ -20,7 +20,7 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let product of filterProduct">
-                    [<td><div class="logo"><img class="logo-img" src="{{product.logo}}" alt="{{product.name}}"></div></td>
+                    <td><div class="logo"><img class="logo-img" src="{{product.logo}}" alt="{{product.name}}"></div></td>
                     <td>{{product.name}}</td>
                     <td>{{product.description}}</td>
                     <td>{{product.date_release}}</td>
@@ -31,7 +31,13 @@
               </table>
             
               <div class="footer">
-            
+                <p>{{listProduct.length}} dato(s) encontrado(s)</p>
+                <select (change)="onSelected($event)">
+                  <option *ngIf="listCuantity.length === 0" disabled>Sin opciones disponibles</option>
+                  <option *ngFor="let quantity of listCuantity" [value]="quantity">{{quantity}}</option>
+          
+                </select>
+
               </div>
             </div>
     </div>
