@@ -114,3 +114,136 @@
     background-color: #F5DF66;
   }
   
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .form-container {
+        width: 100%;
+        margin: 20px auto;
+        padding: 15px;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .container-registro {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .container-registro .row {
+        flex-direction: column;
+        gap: 15px;
+        justify-content: flex-start;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .form-group input {
+        width: 100%;
+        font-size: 14px;
+        height: 35px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+        margin: 10px;
+    }
+
+    .btn-reset,
+    .btn-submit {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .error {
+        font-size: 14px;
+    }
+
+    .message p, .message-error p {
+        font-size: 16px;
+    }
+
+    .btn-reset, .btn-submit {
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 450px) {
+    .form-container {
+        width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .container-registro {
+        margin: 10px auto;
+        padding: 0 5px;
+    }
+
+    .container-registro .row {
+        flex-direction: column;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input {
+        width: 100%;
+        font-size: 14px;
+        height: 30px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        margin: 5px;
+    }
+
+    .btn-reset,
+    .btn-submit {
+        width: 100%;
+        max-width: 250px;
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .error {
+        font-size: 12px;
+    }
+
+    .message p, .message-error p {
+        font-size: 14px;
+    }
+
+    .btn-reset, .btn-submit {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+

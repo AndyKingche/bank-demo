@@ -28,6 +28,7 @@
                     <td> <select class="more-options" (change)="onDropdownChange($event, product)">
                       <option value="" disabled selected>⋮</option>
                       <option value="edit">Editar</option>
+                      <option value="delete">Eliminar</option>
                     </select>
                   </td>
                   </tr>
@@ -45,4 +46,15 @@
               </div>
             </div>
     </div>
+</div>
+
+
+<div class="modal" *ngIf="showModal">
+  <div class="modal-content">
+    <p>¿Estás seguro de eliminar el producto {{ selectedProduct?.name }}?</p>
+    <div class="modal-actions">
+      <button class="cancel-button" (click)="closeModal()">Cancelar</button>
+      <button class="confirm-button" (click)="deleteProduct()">Confirmar</button>
+    </div>
+  </div>
 </div>

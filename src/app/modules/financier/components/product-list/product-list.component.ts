@@ -15,6 +15,9 @@ export class ProductListComponent implements OnInit {
   searchControl = new FormControl('');
   itmesNumber: number = 5; // items por carga
   listCuantity: any[] = []; // lista del grupo de la cantidad de productos que se desea mostrar
+  selectedProduct : Product | null = null ; // Se creó para obtener el producto a eliminar
+  showModal : boolean = false;
+  isLoading: boolean = false; 
 
   constructor(private financierService: FinancierService, private router: Router) {}
 
@@ -97,6 +100,12 @@ export class ProductListComponent implements OnInit {
       
       this.editProduct(product);
     }
+
+    if (selectedOption === 'delete') {
+      this.selectedProduct = product;
+      this.showModal = true;      
+ 
+    }
     (event.target as HTMLSelectElement).value = '';
   }
 
@@ -112,6 +121,22 @@ export class ProductListComponent implements OnInit {
     this.router.navigate(['/product-add']);
   }
 
+  closeModal(){
+    this.showModal = false;
+    this.selectedProduct = null; 
+  }
 
+  deleteProduct(){
+    if (this.selectedProduct) {
+      this.isLoading = true; 
+      this.financierService.deleteProduct(this.selectedProduct.id).subscribe((res:any) => {
+        this.getlistProduct();
+        this.getCuantity();
+        this.closeModal(); 
+        this.isLoading = false;
+      
+      });
+    }
+  }
 
 }

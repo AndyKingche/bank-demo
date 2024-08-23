@@ -31,4 +31,8 @@ export class FinancierService {
     return this.http.put<Product>(`${environment.products}/${id}`,product);
   }
 
+  deleteProduct(id:string):Observable<any>{
+    return this.http.delete<any>(`${environment.products}/${id}`);
+  }
+
 }
