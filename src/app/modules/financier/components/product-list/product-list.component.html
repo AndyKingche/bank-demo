@@ -3,7 +3,7 @@
      <div class="content">
         <div class="header">
             <input type="text" [formControl]="searchControl" placeholder="Search..." class="search-input">
-            <button class="add-button">Agregar</button>
+            <button class="add-button" (click)="addNewProduct()">Agregar</button>
           </div>
           <div class="table-container">
               
@@ -25,7 +25,11 @@
                     <td>{{product.description}}</td>
                     <td>{{product.date_release}}</td>
                     <td>{{product.date_revision}}</td>
-                    <td><button class="more-options">⋮</button></td>
+                    <td> <select class="more-options" (change)="onDropdownChange($event, product)">
+                      <option value="" disabled selected>⋮</option>
+                      <option value="edit">Editar</option>
+                    </select>
+                  </td>
                   </tr>
                 </tbody>
               </table>

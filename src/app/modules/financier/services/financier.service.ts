@@ -19,6 +19,16 @@ export class FinancierService {
     return this.http.post<Product>(`${environment.products}`, product);
   }
 
+  getProduct(id:string):Observable<Product>{
+    return this.http.get<Product>(`${environment.products}/${id}`);
+  }
 
+  checkProduct(id:string):Observable<any>{
+    return this.http.get<any>(`${environment.products}/verification/${id}`)
+  }
+
+  getUpdate(product:Product, id:string):Observable<Product>{
+    return this.http.put<Product>(`${environment.products}/${id}`,product);
+  }
 
 }

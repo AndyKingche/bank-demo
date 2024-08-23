@@ -51,27 +51,25 @@
           </div>
       
           <div class="row-button">
-            <div class="form-buttons">
-              <button type="reset" class="btn-reset" (click)="onReset()">Reiniciar</button>
-              <button type="submit" class="btn-submit">Enviar</button>
-            </div>
+            
           </div>
+          
           <div class="row">
 
-              <div class="message" *ngIf="add">
+              <div class="message" *ngIf="addMessage">
                 <p>
                     EL PRODUCTO SE REGISTRO CON EXITO!!!!
 
                 </p>
               </div>
-              <div class="message" *ngIf="update">
+              <div class="message" *ngIf="updateMessage">
                 <p>
                     EL PRODUCTO SE REGISTRO CON EXITO!!!!
 
                 </p>
               </div>
 
-              <div class="message-error" *ngIf="errores">
+              <div class="message-error" *ngIf="erroresMessage">
                 <p>
                     REVISE LOS DATOS QUE ESTÁ INGRESANDO {{message_error}}
 
@@ -80,4 +78,11 @@
 
           </div>
     </form>
+    <div class="form-buttons">
+   
+        <button type="reset" class="btn-reset" (click)="onResets()">Reiniciar</button>
+              
+        <button type="submit" class="btn-submit" *ngIf="!edit" (click)="addProduct()">Enviar</button>
+        <button type="button" class="btn-submit" (click)="updateProduct()" *ngIf="edit" >Actualizar</button>
+      </div>
   </div>

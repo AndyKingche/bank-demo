@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FinancierService } from '../../services/financier.service';
 import { Product } from '../../models/product.model';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -15,7 +16,7 @@ export class ProductListComponent implements OnInit {
   itmesNumber: number = 5; // items por carga
   listCuantity: any[] = []; // lista del grupo de la cantidad de productos que se desea mostrar
 
-  constructor(private financierService: FinancierService) {}
+  constructor(private financierService: FinancierService, private router: Router) {}
 
   ngOnInit(): void {
     this.getlistProduct();
@@ -88,6 +89,28 @@ export class ProductListComponent implements OnInit {
     
   }
 
+  onDropdownChange(event: Event, product: any) {
+    const selectedOption = (event.target as HTMLSelectElement).value;
+
+    if (selectedOption === 'edit') {
+      console.log(product.id);
+      
+      this.editProduct(product);
+    }
+    (event.target as HTMLSelectElement).value = '';
+  }
+
+
+  editProduct(product:any) {
+
+    this.router.navigate(['/product-edit', product.id], {
+      state: { product },
+    });
+  }
+
+  addNewProduct(){
+    this.router.navigate(['/product-add']);
+  }
 
 
 
