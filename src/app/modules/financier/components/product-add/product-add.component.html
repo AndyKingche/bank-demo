@@ -1,0 +1,83 @@
+<div class="form-container">
+    <h2>Formulario de Registro</h2>
+    <form [formGroup]="productForm" (ngSubmit)="addProduct()" class="container-registro">
+        <div class="row">
+            <div class="form-group">
+              <label for="id">ID</label>
+              <input type="text" id="id" formControlName="id"/>
+              <span *ngIf="productForm.get('id')?.hasError('required')" class="error">¡ID es requerido!</span>
+              <span *ngIf="productForm.get('id')?.hasError('minlength')" class="error">¡ID debe tener al menos 3 caracteres!</span>
+              <span *ngIf="productForm.get('id')?.hasError('maxlength')" class="error">¡ID no debe exceder 10 caracteres!</span>
+            </div>
+      
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" formControlName="name" />
+              <span *ngIf="productForm.get('name')?.hasError('required')" class="error">¡Nombre es requerido!</span>
+              <span *ngIf="productForm.get('name')?.hasError('minlength')" class="error">¡Nombre debe tener al menos 5 caracteres!</span>
+              <span *ngIf="productForm.get('name')?.hasError('maxlength')" class="error">¡Nombre no debe exceder 100 caracteres!</span>
+            </div>
+          </div>
+      
+          <div class="row">
+            <div class="form-group">
+              <label for="description">Descripción</label>
+              <input type="text" id="description" formControlName="description" />
+              <span *ngIf="productForm.get('description')?.hasError('required')" class="error">¡Descripción es requerida!</span>
+              <span *ngIf="productForm.get('description')?.hasError('minlength')" class="error">¡Descripción debe tener al menos 10 caracteres!</span>
+              <span *ngIf="productForm.get('description')?.hasError('maxlength')" class="error">¡Descripción no debe exceder 200 caracteres!</span>
+            </div>
+      
+            <div class="form-group">
+              <label for="logo">Logo</label>
+              <input type="text" id="logo" formControlName="logo" />
+              <span *ngIf="productForm.get('logo')?.hasError('required')" class="error">¡Logo es requerido!</span>
+            </div>
+          </div>
+      
+          <div class="row">
+            <div class="form-group">
+              <label for="date_release">Fecha de Liberación</label>
+              <input type="date" id="date_release" formControlName="date_release" [attr.min]="todayDate" />
+              <span *ngIf="productForm.get('date_release')?.hasError('required')" class="error">¡Fecha de liberación es requerida!</span>
+              <span *ngIf="productForm.get('date_release')?.hasError('invalidDate')" class="error">¡Fecha de liberación debe ser hoy o una fecha futura!</span>
+            </div>
+      
+            <div class="form-group">
+              <label for="date_revision">Fecha de Revisión</label>
+              <input type="date" id="date_revision" formControlName="date_revision"/>
+             
+            </div>
+          </div>
+      
+          <div class="row-button">
+            <div class="form-buttons">
+              <button type="reset" class="btn-reset" (click)="onReset()">Reiniciar</button>
+              <button type="submit" class="btn-submit">Enviar</button>
+            </div>
+          </div>
+          <div class="row">
+
+              <div class="message" *ngIf="add">
+                <p>
+                    EL PRODUCTO SE REGISTRO CON EXITO!!!!
+
+                </p>
+              </div>
+              <div class="message" *ngIf="update">
+                <p>
+                    EL PRODUCTO SE REGISTRO CON EXITO!!!!
+
+                </p>
+              </div>
+
+              <div class="message-error" *ngIf="errores">
+                <p>
+                    REVISE LOS DATOS QUE ESTÁ INGRESANDO {{message_error}}
+
+                </p>
+              </div>
+
+          </div>
+    </form>
+  </div>
